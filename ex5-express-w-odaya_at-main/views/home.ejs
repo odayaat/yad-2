@@ -1,0 +1,23 @@
+<h1>Latest Ads</h1>
+
+<% if (ads.length>0) { %>
+<div class="row">
+  <% ads.forEach(function(ad){ %>
+  <div class="col-md-4">
+    <div class="card mb-4 shadow" style="background-color: #f8f9fa">
+      <div class="card-body">
+        <h5 class="card-title"><%= ad.title %></h5>
+        <p class="card-text"><%= ad.description %></p>
+        <p class="card-text">Price: <%= ad.price %></p>
+        <p class="card-text">Phone: <%= ad.phone %></p>
+        <p class="card-text">Email: <%= ad.email %></p>
+      </div>
+    </div>
+  </div>
+  <% }) %>
+</div>
+<% } else { %>
+<div class="alert alert-info">
+  <p>No ads available.</p>
+</div>
+<% } %>
